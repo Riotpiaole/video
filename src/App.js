@@ -17,10 +17,55 @@ class App extends React.Component {
                         Send</button> : <button disabled>Send</button>;
                 return (
 			<div className='App'>
-				<div class='buttons'>
-					<button onClick={() => this.handleConnectClick()}>{connected ? 'Disconnect' : 'Connect'}</button>
-					{sendButton}
-				</div>
+				<div class="video_container">
+
+<video width="320" height="240" controls>
+  <source src="video.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+</div>
+
+
+
+<div class="chatbox_container">
+
+	<div class="chatbox_header">
+	<p style="text-align:center;">Chatbox</p>
+	</div>
+	
+	<div class="chatbox_inner">
+		<div class="container">
+		  <img src="./profile.png" alt="Avatar">
+		  <p>Hello.</p>
+		  <span class="time-right">11:00</span>
+		</div>
+
+		<div class="container darker">
+		  <img src="./profile.png" alt="Avatar">
+		  <p>Hey!</p>
+		  <span class="time-left">11:01</span>
+		</div>
+
+		<div class="container">
+		  <img src="./profile.png" alt="Avatar">
+		  <p>Sweet!</p>
+		  <span class="time-right">11:02</span>
+		</div>
+
+		<div class="container darker">
+		  <img src="./profile.png" alt="Avatar">
+		  <p>Nah</p>
+		  <span class="time-left">11:05</span>
+		</div>
+	</div>
+	<div class="send_messeage">
+		<form>
+		<input type="text" name="chat_input"><br><br>
+		<input type="submit" value="Send">
+		</form>
+	</div>
 				<ol>
 					{
                                         this.state.messages.map((message, index) => {
